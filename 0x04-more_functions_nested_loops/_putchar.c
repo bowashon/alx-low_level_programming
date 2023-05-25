@@ -3,9 +3,9 @@
 /**
  * _putchar - writes to stdout
  * @c: parameter to be output
- * Return: return 1 
+ * Return: return 1
  */
 int _putchar(int c)
 {
-	write((1, &c, 1));
+	return (write(1, &c, 1));
 }
