@@ -1,10 +1,9 @@
 #include "main.h"
 
 /**
- * print_number - prints integers to the stdout
+ * print_number - print integers
  *
- * @n: integer to be printed
- *
+ * @n: parameter to be printed
  */
 void print_number(int n)
 {
@@ -20,6 +19,4 @@ void print_number(int n)
 		print_number(num / 10);
 	}
 	_putchar((num % 10) + '0');
-
 }
-
