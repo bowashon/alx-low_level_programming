@@ -11,7 +11,7 @@
 
 int main(void)
 {
-	long long int num = 612852475143;
+	long int num = 612852475143;
 	int fac;
 	int largest_prime_fac = 1;
 	double square = sqrt(num);
