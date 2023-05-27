@@ -38,7 +38,7 @@ int main(void)
 		largest_prime_fac = num;
 	}
 
-	printf("%d", largest_prime_fac);
+	printf("%d\n", largest_prime_fac);
 
 	return (0);
 }
