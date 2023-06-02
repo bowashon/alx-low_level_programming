@@ -6,7 +6,7 @@
  * Return: returns a pointer to the string
  *
  */
-char* leet(char *s)
+char *leet(char *s)
 {
 	int i = 0;
 	int j = 0;
