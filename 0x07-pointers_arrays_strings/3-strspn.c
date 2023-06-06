@@ -1,4 +1,4 @@
-#include "main.h"
+`#include "main.h"
 
 /**
  * _strspn - function that gets the length of a prefix substring.
@@ -19,7 +19,7 @@ unsigned int _strspn(char *s, char *accept)
 	{
 		match = 0;
 		j = 0;
-	
+
 		while (accept[j] != '\0')
 		{
 			if (s[i] == accept[j])
