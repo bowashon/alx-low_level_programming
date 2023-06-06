@@ -9,20 +9,20 @@
 char *_strpbrk(char *s, char *accept)
 {
 	char match = 0;
-	char *temp = accept;
+	char *str = accept;
 
 	while (*s)
 	{
 		match = 0;
 
-		while (*temp)
+		while (*str)
 		{
-			if (*s == *temp)
+			if (*s == *str)
 			{
 				match = 1;
 				return (s);
 				}
-		temp++;
+		str++;
 		}
 
 		if (!match)
