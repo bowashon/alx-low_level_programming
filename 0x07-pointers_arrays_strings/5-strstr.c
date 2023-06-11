@@ -14,6 +14,7 @@ char *_strstr(char *haystack, char *needle)
 	bool match = true;
 
 	if (*needle == '\0')
+
 	{
 		return (haystack);
 	}
@@ -22,6 +23,7 @@ char *_strstr(char *haystack, char *needle)
 	{
 		char *n = needle;
 		char *h = haystack;
+
 		match = true;
 		while (*n != '\0')
 		{
