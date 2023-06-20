@@ -14,6 +14,11 @@ void init_dog(struct dog *d, char *name, float age, char *owner)
 	char len1 = strlen(name);
 	char len2 = strlen(owner);
 
+	if (d == NULL)
+	{
+		d = malloc(sizeof(struct dog);
+	}
+
 	(*d).name = malloc(len1 + 1);
 	(*d).owner = malloc(len2 + 1);
 
