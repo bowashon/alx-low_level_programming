@@ -4,13 +4,14 @@
 /**
  * struct op - Struct op
  * @f: The function associatedi
+ * @op: pointer to operation passed as argument
  */
 
 typedef struct op
 {
 	char *op;
 	int (*f)(int a, int b);
-}op_t;
+} op_t;
 
 
 int op_add(int a, int b);
