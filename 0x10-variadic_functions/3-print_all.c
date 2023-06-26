@@ -28,8 +28,7 @@ void print_all(const char * const format, ...)
 			case's':
 			str = va_arg(user_input, char *);
 			if (str == NULL)
-				printf("(nil)");
-			else
+				str = (nil);
 			printf("%s%s", space, str);
 			break;
 			case'f':
