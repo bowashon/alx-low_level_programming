@@ -11,7 +11,7 @@ void print_binary(unsigned long int n)
 
 	while (bitsize)
 	{
-		if (n & 1L << --bitsize)
+		if (n & 1UL << --bitsize)
 		{
 			_putchar('1');
 			count++;
