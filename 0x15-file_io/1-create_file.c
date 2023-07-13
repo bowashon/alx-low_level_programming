@@ -1,14 +1,14 @@
 #include "main.h"
 /**
- * creat_file - function that creates a file
+ * create_file - function that creates a file
  * @filename: pointer to the file to be created
  * @text_content: content to write to the file
  * Return: 1 on success and -1 on error
  */
-int creat_file(const char *filename, char *text_content)
+int create_file(const char *filename, char *text_content)
 {
-	int file, text_written;
-	int len = strlen(text_content), i = 0;
+	int file;
+	size_t len = strlen(text_content), text_written = 0;
 
 	if (filename == NULL)
 	{
@@ -19,15 +19,9 @@ int creat_file(const char *filename, char *text_content)
 	{
 		return (-1);
 	}
-	if (text_content != NULL)
+	if (len)
 	{
-		while (i < len)
-		{
-			text_written = write(file, &text_content[i], 1);
-			if (text_written == -1)
-				return (-1);
-			i++;
-		}
+		text_written = write(file, text_content, len);
 	}
 	if (text_written != len)
 		return (-1);
