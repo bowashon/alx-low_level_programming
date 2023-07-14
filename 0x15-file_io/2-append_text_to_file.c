@@ -8,7 +8,7 @@
 int append_text_to_file(const char *filename, char *text_content)
 {
 	int file;
-	size_t len = strlen(text_content), text_written = 0i;
+	size_t len = strlen(text_content), text_written = 0;
 
 	if (filename == NULL)
 	{
