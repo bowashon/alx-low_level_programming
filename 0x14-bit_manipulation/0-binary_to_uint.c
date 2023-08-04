@@ -1,14 +1,12 @@
 #include "main.h"
-#include <stddef.h>
 /**
- * binary_to_uint -function that convets binary to unit
- * @b: string to convert
- * Return: converted unit.
+ * binary_to_uint - function the converts binary to integers
+ * @b: the constant binary integer to convert
+ * Return: returns the result of the converted binary or 0 if otherwise
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int unit = 0;
-
+	unsigned int result = 0;
 
 	if (b == NULL)
 	{
@@ -17,11 +15,20 @@ unsigned int binary_to_uint(const char *b)
 
 	while (*b)
 	{
+
 		if (*b != '0' && *b != '1')
+		{
 			return (0);
-		unit = unit * 2 + (*b - '0');
+		}
+
+		result <<= 1;
+
+		if (*b == '1')
+		{
+			result |= 1;
+		}
 		b++;
 	}
-	return (unit);
-}
 
+	return (result);
+}
