@@ -1,15 +1,14 @@
 #include "main.h"
 /**
  * create_file - function that creates a file
- * @filename: the name of the file
- * @text_content: content of the file
- * Return: returns 1 on success and - on failure
+ * @filename: name of the file
+ * @text_content: text_content to write on the file
+ * Return: return 1 if success and -1 if error
  */
 int create_file(const char *filename, char *text_content)
 {
-	int file;
+	int file, bytes_written;
 	size_t len = 0;
-	ssize_t text_written;
 
 	if (!filename)
 	{
@@ -22,15 +21,15 @@ int create_file(const char *filename, char *text_content)
 	file = open(filename, O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR);
 	if (file == -1)
 	{
-		perror("open");
 		return (-1);
 	}
-	text_written = write(file, text_content, len);
-	if (text_written == -1)
+	if (len > 0)
 	{
-		close(file);
-		return (-1);
+		bytes_written = write(file, text_content, len);
+		if (bytes_written == -1)
+		{
+			return (-1);
+		}
 	}
-	close(file);
 	return (1);
 }
