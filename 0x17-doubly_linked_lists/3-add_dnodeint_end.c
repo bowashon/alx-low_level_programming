@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * add_dnodeint_end - function that adds new_node at the end of a doubly linked 
- * list
+ * add_dnodeint_end - function that adds new_node at the end of a
+ * doubly linked list
  * @head: points to the head node
  * @n: data of the new_node
  * Return: returns a pointer to the new node or NULL if otherwise
@@ -34,7 +34,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 		current = current->next;
 	}
 	current->next = new_node;
-	new_node->prev = current; 
+	new_node->prev = current;
 	new_node->next = NULL;
 
 	return (new_node);
