@@ -21,7 +21,6 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	}
 	if (current == NULL)
 	{
-		perror("node does not exist\n");
 		return (NULL);
 	}
 
