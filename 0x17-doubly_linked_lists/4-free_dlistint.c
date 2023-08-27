@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 /**
- * free_dlistint - function that frees a node in doubly 
+ * free_dlistint - function that frees a node in doubly
  * linked list
  * @head: points to the head
  *
