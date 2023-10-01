@@ -46,41 +46,33 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *current;
 	hash_node_t *new_node;
 
-	index = key_index((const unsigned char *)key, ht->size);
 	if (ht == NULL || ht->size == 0 || ht->array == NULL ||
 	    key == NULL || strlen(key) == 0 || value == NULL)
 	{
 		return (0);
 	}
-	/*if bucket is empty*/
-	if (ht->array[index] == NULL)
+	index = key_index((const unsigned char *)key, ht->size);
+
+	current = ht->array[index];
+	while (current != NULL)
 	{
-		ht->array[index] = create_node(key, value);
+		if (strcmp(current->key, key) == 0)
+		{
+			free(current->value);
+			new_value = strdup(value);
+			if (new_value == NULL)
+				return (0);
+			current->value = new_value;
+		}
+		current = current->next;
 		return (1);
 	}
-	else /*handle collision*/
+	new_node = create_node(key, value);
+	if (new_node == NULL)
 	{
-		current = ht->array[index];
-		while (current != NULL)
-		{
-			if (strcmp(current->key, key) == 0)
-			{
-				free(current->value);
-				new_value = strdup(value);
-				if (new_value == NULL)
-					return (0);
-				current->value = new_value;
-			}
-			current = current->next;
-			return (1);
-		}
-		new_node = create_node(key, value);
-		if (new_node == NULL)
-		{
-			return (0);
-		}
-		new_node->next = ht->array[index];
-		ht->array[index] = new_node;
-		return (1);
+		return (0);
 	}
+	new_node->next = ht->array[index];
+	ht->array[index] = new_node;
+	return (1);
 }
